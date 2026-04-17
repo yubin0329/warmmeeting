@@ -1,0 +1,1034 @@
+/* ===========================
+   EV_Challenge_lost.css
+   실종/제보 페이지 전용 스타일
+=========================== */
+
+/* ==================
+   1. 히어로 배너
+================== */
+.lost-hero {
+  background: linear-gradient(160deg, #EBF5FF 0%, #F0F8FF 60%, #FFFDE8 100%);
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.lost-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lost-hero-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #E11D48;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
+}
+
+.lost-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 16px;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+}
+
+.lost-hero p {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.lost-hero-search-box {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 8px 8px 8px 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+  gap: 0;
+}
+
+.hero-search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 8px 16px;
+}
+
+.hero-search-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.hero-search-field select,
+.hero-search-field input {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  background: transparent;
+  width: 100%;
+}
+
+.hero-search-field select option { color: var(--dark); }
+.hero-search-field input::placeholder { color: #9CA3AF; }
+
+.hero-search-divider {
+  width: 1px; height: 32px;
+  background: #E5E7EB;
+  flex-shrink: 0;
+}
+
+.btn-hero-search {
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-hero-search:hover { background: #2d8fe8; transform: translateY(-1px); }
+
+.lost-hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-lost-primary {
+  background: #E11D48;
+  color: var(--white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(225,29,72,0.3);
+}
+
+.btn-lost-primary:hover { background: #be123c; transform: translateY(-2px); }
+
+.btn-lost-secondary {
+  background: var(--white);
+  color: var(--dark);
+  border: 1.5px solid #E5E7EB;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.btn-lost-secondary:hover { border-color: var(--dark); transform: translateY(-2px); }
+
+/* ==================
+   2. 실종 동물 목록
+================== */
+.lost-list-section {
+  padding: 80px 60px;
+  background: var(--white);
+}
+
+.lost-list-inner { max-width: 1400px; margin: 0 auto; }
+
+.lost-list-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.lost-list-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.lost-list-header p { font-size: 0.9rem; color: var(--gray); }
+
+.lost-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F3F4F6;
+  border-radius: 50px;
+  padding: 10px 20px;
+  min-width: 240px;
+}
+
+.lost-search input {
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  outline: none;
+  width: 100%;
+}
+
+.lost-search input::placeholder { color: var(--gray); }
+
+.lost-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lost-filter-btns,
+.lost-sort-btns { display: flex; gap: 8px; }
+
+.filter-btn {
+  background: var(--white);
+  border: 1.5px solid #E5E7EB;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+.filter-btn.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+
+.sort-btn {
+  background: var(--white);
+  border: 1.5px solid #E5E7EB;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sort-btn:hover { border-color: var(--dark); color: var(--dark); }
+.sort-btn.active { background: var(--dark); border-color: var(--dark); color: var(--white); }
+
+/* ========================================
+   4열 그리드로 변경 (기존 3열 → 4열)
+======================================== */
+.lost-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.lost-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--white);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+
+.lost-card:hover { transform: translateY(-8px); box-shadow: 0 18px 36px rgba(0,0,0,0.1); }
+
+.lost-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lost-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.lost-card:hover .lost-card-img img { transform: scale(1.08); }
+
+.img-placeholder { font-size: 2.5rem; color: #9CA3AF; }
+
+.tag-status {
+  position: absolute;
+  top: 12px; left: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  z-index: 1;
+}
+
+.status-lost  { background: #E11D48; color: var(--white); }
+.status-found { background: #52C41A; color: var(--white); }
+
+.tag-type {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Noto Sans KR', sans-serif;
+  z-index: 1;
+}
+
+.lost-card-body {
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lost-card-body h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.breed { font-size: 0.82rem; color: var(--gray); margin-bottom: 12px; }
+
+.lost-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.lost-info li { font-size: 0.8rem; color: #4B5563; }
+
+/* 특징 더보기 처리 */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.feature-icon { flex-shrink: 0; }
+
+.feature-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.feature-text.feature-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.btn-feature-more {
+  background: none;
+  border: none;
+  color: #4DA6FF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: underline;
+  line-height: 1.4;
+}
+
+.lost-phone {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.btn-report {
+  width: 100%;
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  padding: 11px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-report:hover { background: #2d8fe8; transform: translateY(-1px); }
+
+.no-result {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--gray);
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* ==================
+   3. 실종 신고 배너
+================== */
+.report-banner-section {
+  padding: 0 60px 60px;
+  background: var(--white);
+}
+
+.report-banner {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #E0F3FF;
+  border-radius: 20px;
+  padding: 48px;
+  text-align: center;
+}
+
+.report-banner h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.report-banner p { font-size: 0.95rem; color: var(--gray); margin-bottom: 28px; }
+
+.btn-report-banner {
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(77,166,255,0.3);
+}
+
+.btn-report-banner:hover { background: #2d8fe8; transform: translateY(-2px); }
+
+/* ==================
+   4. 함께 만든 기적
+================== */
+.miracle-section {
+  background: linear-gradient(135deg, #7DC8F7 0%, #A8D8EA 40%, #F5F7A0 100%);
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.miracle-inner { max-width: 900px; margin: 0 auto; }
+
+.miracle-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.miracle-section p { font-size: 0.95rem; color: rgba(255,255,255,0.9); margin-bottom: 48px; }
+
+.miracle-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.miracle-stat { display: flex; flex-direction: column; gap: 8px; }
+
+.miracle-num { font-size: 2.5rem; font-weight: 800; color: var(--white); line-height: 1; }
+
+.miracle-label { font-size: 0.88rem; color: rgba(255,255,255,0.85); }
+
+/* ==================
+   5. 반응형
+================== */
+@media (max-width: 1200px) {
+  .lost-cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .lost-hero { padding: 60px 24px; }
+  .lost-hero h1 { font-size: 2rem; }
+  .lost-hero-search-box { flex-direction: column; padding: 16px; gap: 8px; }
+  .hero-search-divider { width: 100%; height: 1px; }
+  .hero-search-field { padding: 8px 4px; }
+  .btn-hero-search { width: 100%; }
+  .lost-list-section { padding: 60px 24px; }
+  .lost-list-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .lost-filter-bar { flex-direction: column; align-items: flex-start; }
+  .lost-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .report-banner-section { padding: 0 24px 48px; }
+  .report-banner { padding: 32px 24px; }
+  .miracle-section { padding: 60px 24px; }
+  .miracle-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .lost-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ==================
+   6. 실종 동물 상세 모달
+================== */
+.lost-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.lost-modal-overlay.active { display: flex; justify-content: center; align-items: flex-start; }
+
+.lost-modal-container {
+  background: var(--white);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lost-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.lost-modal-author { display: flex; align-items: center; gap: 12px; }
+
+.lost-modal-avatar {
+  width: 40px; height: 40px;
+  background: #EBF5FF;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+
+.lost-modal-author-name { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
+.lost-modal-author-sub  { font-size: 0.8rem; color: var(--gray); }
+
+.lost-modal-header-right { display: flex; align-items: center; gap: 12px; }
+.lost-modal-time { font-size: 0.82rem; color: var(--gray); }
+
+.lost-modal-close {
+  background: #F3F4F6;
+  border: none;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lost-modal-close:hover { background: #E5E7EB; }
+
+.lost-modal-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+.lost-modal-left { padding: 24px; border-right: 1px solid #F3F4F6; }
+
+.lost-modal-main-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #F3F4F6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lost-modal-img-placeholder { font-size: 3rem; color: #9CA3AF; }
+
+.lost-modal-img-counter {
+  position: absolute;
+  bottom: 12px; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.lost-modal-right {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lost-modal-tags { display: flex; gap: 8px; align-items: center; }
+
+.lost-modal-status-tag {
+  background: #E11D48;
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.lost-modal-type-tag { font-size: 0.9rem; font-weight: 700; color: var(--dark); }
+
+.lost-modal-table { width: 100%; border-collapse: collapse; }
+
+.lost-modal-table th {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gray);
+  padding: 6px 0;
+  width: 80px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.lost-modal-table td { font-size: 0.88rem; color: var(--dark); padding: 6px 0; line-height: 1.6; }
+
+.lost-modal-divider { height: 1px; background: #F3F4F6; margin: 4px 0; }
+
+.lost-modal-detail {
+  background: #F9FAFB;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.lost-modal-detail-title { font-size: 0.85rem; font-weight: 700; color: var(--gray); margin-bottom: 6px; }
+.lost-modal-detail-text  { font-size: 0.88rem; color: var(--dark); line-height: 1.7; }
+
+.logo { display: flex; align-items: center; gap: 8px; }
+
+.logo-icon {
+  width: 32px; height: 32px;
+  background: #FFD43B;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .lost-modal-body { grid-template-columns: 1fr; }
+  .lost-modal-left { border-right: none; border-bottom: 1px solid #F3F4F6; }
+}
+
+/* ==================
+   7. 발견 제보 모달
+================== */
+.report-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1100;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.report-modal-overlay.active { display: flex; justify-content: center; align-items: flex-start; }
+
+.report-modal-container {
+  background: var(--white);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: modalSlideIn 0.3s ease;
+}
+
+.report-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  background: linear-gradient(135deg, #7DC8F7 0%, #A8D8EA 100%);
+}
+
+.report-modal-header h3 { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+.report-modal-header p  { font-size: 0.82rem; color: rgba(255,255,255,0.9); }
+
+.report-modal-close {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.report-modal-close:hover { background: rgba(255,255,255,0.4); }
+
+.report-modal-body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 16px; }
+
+.report-upload-area {
+  background: #F0F7FF;
+  border: 2px dashed #B8D8F5;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.report-upload-area:hover { background: #E3F0FC; border-color: #4DA6FF; }
+.report-upload-area.has-image { border-style: solid; border-color: #4DA6FF; background: #EBF5FF; }
+
+.report-upload-icon { font-size: 2rem; margin-bottom: 8px; }
+.report-upload-title { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.report-upload-sub   { font-size: 0.82rem; color: var(--gray); margin-bottom: 14px; }
+
+.btn-upload {
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 10px;
+}
+
+.btn-upload:hover { background: #2d8fe8; }
+.report-upload-drag { font-size: 0.78rem; color: #9CA3AF; margin: 0; }
+
+.report-form { display: flex; flex-direction: column; gap: 14px; }
+.report-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.report-form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.report-form-group label { font-size: 0.88rem; font-weight: 700; color: var(--dark); }
+
+.report-form-group input,
+.report-form-group select,
+.report-form-group textarea {
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--white);
+  resize: none;
+}
+
+.report-form-group input:focus,
+.report-form-group select:focus,
+.report-form-group textarea:focus { border-color: #4DA6FF; }
+
+.report-form-group input::placeholder,
+.report-form-group textarea::placeholder { color: #9CA3AF; }
+
+.btn-report-submit {
+  width: 100%;
+  background: #7DC8F7;
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+
+.btn-report-submit:hover { background: #4DA6FF; transform: translateY(-1px); }
+
+@media (max-width: 500px) {
+  .report-form-row { grid-template-columns: 1fr; }
+}
+
+/* ==================
+   8. 실종 신고 모달
+================== */
+.lost-report-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1200;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.lost-report-modal-overlay.active { display: flex; justify-content: center; align-items: flex-start; }
+
+.lost-report-modal-container {
+  background: var(--white);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 860px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: modalSlideIn 0.3s ease;
+}
+
+/* ---- 헤더 ---- */
+.lost-report-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.lost-report-header-left { display: flex; align-items: center; gap: 14px; }
+
+.lost-report-header-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #FF6B8A, #E11D48);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+
+.lost-report-modal-header h3 { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+.lost-report-modal-header p  { font-size: 0.8rem; color: var(--gray); }
+
+.lost-report-close {
+  background: #F3F4F6;
+  border: none;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--dark);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lost-report-close:hover { background: #E5E7EB; }
+
+/* ---- 본문 2열 ---- */
+.lost-report-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #F3F4F6;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+.lost-report-left { padding-right: 20px; border-right: 1px solid #F3F4F6; }
+.lost-report-right { padding-left: 20px; }
+
+/* ---- 섹션 타이틀 ---- */
+.lost-report-section-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+/* ---- 업로드 영역 ---- */
+.lost-report-upload-area {
+  border: 1.5px dashed #D1D5DB;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #FAFAFA;
+  transition: border-color 0.2s, background 0.2s;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.lost-report-upload-area:hover { border-color: #4DA6FF; background: #F0F7FF; }
+
+.lost-report-upload-icon { font-size: 1.6rem; }
+
+.lost-report-upload-title { font-size: 0.88rem; font-weight: 700; color: var(--dark); margin: 0; }
+.lost-report-upload-sub   { font-size: 0.78rem; color: var(--gray); margin: 0; }
+
+/* ---- 사진 미리보기 그리드 ---- */
+.lost-report-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lost-report-preview-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+}
+
+.lost-report-preview-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lost-report-preview-delete {
+  position: absolute;
+  top: 4px; right: 4px;
+  width: 22px; height: 22px;
+  background: rgba(0,0,0,0.55);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lost-report-preview-delete:hover { background: #E11D48; }
+
+/* ---- 폼 공통 ---- */
+.lost-report-form { display: flex; flex-direction: column; gap: 10px; }
+.lost-report-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lost-report-form-group { display: flex; flex-direction: column; gap: 4px; }
+
+.lost-report-form-group label { font-size: 0.82rem; font-weight: 700; color: var(--dark); }
+
+.req { color: #E11D48; }
+
+.lost-report-form-group input,
+.lost-report-form-group select,
+.lost-report-form-group textarea {
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--white);
+  resize: none;
+}
+
+.lost-report-form-group input:focus,
+.lost-report-form-group select:focus,
+.lost-report-form-group textarea:focus { border-color: #4DA6FF; }
+
+.lost-report-form-group input::placeholder,
+.lost-report-form-group textarea::placeholder { color: #9CA3AF; }
+
+/* ---- 하단 버튼 ---- */
+.lost-report-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 14px 24px;
+  align-items: center;
+}
+
+.btn-lost-report-cancel {
+  background: var(--white);
+  color: var(--dark);
+  border: 1.5px solid #E5E7EB;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-lost-report-cancel:hover { border-color: var(--dark); }
+
+.btn-lost-report-submit {
+  flex: 1;
+  background: #E11D48;
+  color: var(--white);
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-lost-report-submit:hover { background: #be123c; transform: translateY(-1px); }
+
+@media (max-width: 700px) {
+  .lost-report-modal-body { grid-template-columns: 1fr; max-height: none; }
+  .lost-report-left { padding-right: 0; border-right: none; border-bottom: 1px solid #F3F4F6; padding-bottom: 20px; margin-bottom: 20px; }
+  .lost-report-right { padding-left: 0; }
+}

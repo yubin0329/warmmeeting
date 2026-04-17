@@ -1,0 +1,585 @@
+/* ===========================
+   EV_Challenge_volunteer.css
+=========================== */
+
+/* ==================
+   1. 히어로 배너
+================== */
+.vol-hero {
+  background: linear-gradient(160deg, #EBF5FF 0%, #F0F8FF 60%, #FFFFFF 100%);
+  padding: 80px 60px;
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+}
+
+.vol-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.vol-hero-left h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.vol-hero-left p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.8;
+}
+
+.btn-vol-apply {
+  display: inline-block;
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+  box-shadow: 0 4px 16px rgba(77,166,255,0.3);
+  margin-top: 8px;
+}
+
+.btn-vol-apply:hover {
+  background: #2d8fe8;
+  transform: translateY(-2px);
+}
+
+/* ==================
+   2. 공통
+================== */
+.vol-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+/* ==================
+   3. 프로그램 카드
+================== */
+.vol-programs {
+  padding: 100px 60px;
+  background: var(--white);
+}
+
+.vol-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.vol-card {
+  background: var(--light-gray);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.vol-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+.vol-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vol-card-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vol-seats {
+  font-size: 0.8rem;
+  color: var(--blue);
+  background: #E8F4FD;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.vol-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.vol-card p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.vol-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #4B5563;
+  margin-top: auto;
+}
+
+.btn-vol-card {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #4DA6FF;
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+
+.btn-vol-card:hover { background: #2A7CC7; }
+
+/* ==================
+   4. 봉사 일정 캘린더
+================== */
+.vol-calendar {
+  background: linear-gradient(160deg, #EBF5FF 0%, #F0F8FF 100%);
+  padding: 100px 60px;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendar-left {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-right {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  min-height: 300px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cal-right-header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F3F4F6;
+  margin-bottom: 16px;
+}
+
+.cal-right-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.no-schedule-hint {
+  font-size: 0.85rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 40px;
+  line-height: 1.8;
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.cal-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.cal-nav {
+  background: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--gray);
+  transition: background 0.15s;
+}
+
+.cal-nav:hover { background: #F3F4F6; }
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.cal-weekdays .sunday  { color: #EF4444; }
+.cal-weekdays .saturday { color: #3B82F6; }
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-cell {
+  min-height: 60px;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cal-cell:hover { background: #F3F4F6; }
+.cal-cell.other-month { opacity: 0.3; }
+
+.cal-date {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.cal-cell.sunday .cal-date   { color: #EF4444; }
+.cal-cell.saturday .cal-date { color: #3B82F6; }
+.cal-cell.today .cal-date {
+  background: #4DA6FF;
+  color: var(--white);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2px;
+}
+
+.cal-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 2px;
+  justify-content: center;
+}
+
+.cal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+.legend-dot      { width: 10px; height: 10px; border-radius: 50%; }
+.legend-animal   { background: #4DA6FF; }
+.legend-facility { background: #52C41A; }
+.legend-edu      { background: #FFD43B; }
+.legend-event    { background: #A855F7; }
+
+.cal-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cal-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #F8FAFC;
+  border-radius: 10px;
+}
+
+.cal-detail-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cal-detail-info { flex: 1; }
+
+.cal-detail-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.cal-detail-time {
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-top: 2px;
+}
+
+.btn-cal-apply {
+  padding: 6px 14px;
+  background: #4DA6FF;
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-cal-apply:hover { background: #2A7CC7; }
+
+/* ==================
+   5. 봉사활동 주의사항
+================== */
+.vol-notice {
+  background: #FFFBEB;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.vol-notice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.vol-notice-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+
+.vol-notice-card:hover { transform: translateY(-4px); }
+
+.vol-notice-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.vol-notice-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.vol-notice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vol-notice-list li {
+  font-size: 0.88rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* ==================
+   6. 찾아오는 길
+================== */
+.vol-location-section {
+  background: linear-gradient(160deg, #EBF5FF 0%, #F0F8FF 100%);
+  padding: 100px 60px;
+}
+
+.vol-location-box {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vol-location-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.vol-map-area { width: 100%; }
+
+.vol-directions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.vol-direction-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: start;
+  gap: 12px;
+  text-align: left;
+}
+
+.direction-num {
+  width: 32px;
+  height: 32px;
+  background: #BFDBFE;
+  color: #1D4ED8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.direction-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.direction-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.direction-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.vol-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #D1E9FF;
+}
+
+.vol-contact-details p {
+  font-size: 0.9rem;
+  color: #4B5563;
+}
+
+/* ==================
+   7. 반응형
+================== */
+@media (max-width: 900px) {
+  .vol-hero           { padding: 60px 24px; }
+  .vol-hero-left h1   { font-size: 2.2rem; }
+  .vol-programs       { padding: 64px 24px; }
+  .vol-cards-grid     { grid-template-columns: 1fr; }
+  .vol-calendar       { padding: 64px 24px; }
+  .calendar-layout    { grid-template-columns: 1fr; }
+  .vol-notice         { padding: 64px 24px; }
+  .vol-notice-grid    { grid-template-columns: 1fr; }
+  .cal-detail-item    { flex-wrap: wrap; }
+  .vol-location-section { padding: 64px 24px; }
+  .vol-location-inner { grid-template-columns: 1fr; }
+  .vol-location-box   { padding: 28px 20px; }
+}
+
+/* ---- 로고 ---- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: #FFD43B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>따뜻한 만남</title>
+  <link rel="stylesheet" href="EV_Challenge_main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="9" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="15" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="5" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <ellipse cx="19" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <path d="M12 10 C7 10 5 14 6 17 C7 20 9 21 12 21 C15 21 17 20 18 17 C19 14 17 10 12 10Z" fill="#1A1A2E"/>
+        </svg>
+      </div>
+      따뜻한 만남
+    </div>
+    <nav>
+      <a href="EV_Challenge_main.html" class="active">홈</a>
+      <a href="#">입양</a>
+      <a href="EV_Challenge_lost.html">실종/제보</a>
+      <a href="EV_Challenge_volunteer.html">자원봉사</a>
+    </nav>
+    <div id="headerAuthArea">
+      <button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>
+    </div>
+  </header>
+
+  <main class="main" id="home">
+    <div class="text">
+      <div class="badge">🐾 유기동물 입양 캠페인</div>
+      <h1>
+        유기동물에게 두 번째 기회를,<br> 당신에게
+        <span class="blue">평생의</span>
+        <span class="green">친구를</span>
+      </h1>
+      <p>
+        매년 수만 마리의 유기동물들이 가족을 기다리고 있습니다.<br>
+        작은 손길이 한 생명의 전부가 됩니다.
+      </p>
+      <div class="buttons">
+        <button type="button" class="btn-primary">🤍 지금 입양하기</button>
+        <button type="button" class="btn-secondary">더 알아보기</button>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number" id="statNum1">0만+</span>
+          <span class="stat-label">입양 완료</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="statNum2">0%</span>
+          <span class="stat-label">만족도</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="statNum3">0+</span>
+          <span class="stat-label">대기 중인 아이들</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-box" aria-label="유기동물 이미지">
+      <div class="image-placeholder">
+        <img src="사진/강아지_메인페이지.jpg" alt="유기동물 사진">
+      </div>
+      <div class="floating-card">
+        <span class="dot green-dot"></span>
+        <span>지금 입양 가능해요!</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== 섹션 2: 따뜻한 만남 소개 ===== -->
+  <section class="about-section" id="about">
+    <div class="section-header animate-on-scroll">
+      <h2>따뜻한 만남 소개</h2>
+      <p>우리는 유기동물과 새 가족의 행복한 만남을 위해 노력하는 비영리 단체입니다.</p>
+    </div>
+    <div class="cards-grid animate-on-scroll">
+      <div class="info-card card-blue">
+        <div class="card-icon">🤍</div>
+        <h3>우리의 미션</h3>
+        <p>모든 유기동물이 따뜻한 가정을 찾을 수 있도록 돕고, 동물 복지 인식을 높이는 것이 우리의 사명입니다.</p>
+      </div>
+      <div class="info-card card-yellow">
+        <div class="card-icon">👥</div>
+        <h3>입양 지원</h3>
+        <p>입양 전 상담부터 입양 후 적응까지, 전문가의 체계적인 지원으로 성공적인 입양을 돕습니다.</p>
+      </div>
+      <div class="info-card card-blue">
+        <div class="card-icon">🏠</div>
+        <h3>임시보호</h3>
+        <p>입양 전까지 안전하고 따뜻한 환경에서 보호하며, 건강검진과 예방접종을 진행합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 섹션 3: 유기동물 문제의 심각성 ===== -->
+  <section class="reality-section" id="reality">
+    <div class="reality-inner">
+      <div class="section-header light animate-on-scroll">
+        <div class="badge badge-pink">↘ 현실</div>
+        <h2>유기동물 문제의 심각성</h2>
+        <p>우리나라의 유기동물 문제는 심각한 사회 문제로 대두되고 있습니다.</p>
+      </div>
+      <div class="reality-content">
+        <div class="reality-cards animate-on-scroll">
+          <div class="reality-card">
+            <div class="reality-icon">📊</div>
+            <div class="reality-text">
+              <h4>연간 유기동물 발생</h4>
+              <p>매년 약 <strong class="highlight-red">13만 마리</strong> 이상의 반려동물이 유기되고 있으며, <br> 이 중 상당수는 안락사 처분됩니다.</p>
+            </div>
+          </div>
+          <div class="reality-card">
+            <div class="reality-icon">💔</div>
+            <div class="reality-text">
+              <h4>낮은 입양률</h4>
+              <p>보호소에 들어온 동물 중 실제 입양되는 비율은 <strong class="highlight-red">30%</strong>에 불과하며, <br> 나머지는 안락사되거나 평생 보호소에서 지냅니다.</p>
+            </div>
+          </div>
+          <div class="reality-card">
+            <div class="reality-icon">✨</div>
+            <div class="reality-text">
+              <h4>우리가 만드는 변화</h4>
+              <p>입양은 생명을 살리는 가장 직접적인 방법입니다. <br> 여러분의 선택이 한 생명의 운명을 바꿀 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reality-image">
+          <img src="사진/유기동물.jpg" alt="유기동물 사진" class="reality-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 섹션 4: 다양한 방법으로 도울 수 있습니다 ===== -->
+  <section class="help-section" id="help">
+    <div class="section-header animate-on-scroll">
+      <h2>다양한 방법으로 도울 수 있습니다</h2>
+      <p>입양 외에도 유기동물을 도울 수 있는 여러 방법이 있습니다</p>
+    </div>
+
+    <div class="sponsor-banner">
+      <div class="sponsor-left">
+        <div class="badge badge-white">🤝 가장 필요한 도움</div>
+        <h3>정기 후원하기</h3>
+        <p>월 1만원으로 한 동물의 한 달 사료비를 책임질 수 있습니다. <br> 정기 후원자에게는 연간 활동 보고서와 세액공제 혜택이 제공됩니다.</p>
+        <div class="sponsor-stats">
+          <div class="sponsor-stat">
+            <span class="sponsor-num">1,247</span>
+            <span class="sponsor-label">후원자</span>
+          </div>
+          <div class="sponsor-stat">
+            <span class="sponsor-num">98%</span>
+            <span class="sponsor-label">동물 지원</span>
+          </div>
+          <div class="sponsor-stat">
+            <span class="sponsor-num">2%</span>
+            <span class="sponsor-label">운영비</span>
+          </div>
+        </div>
+        <button type="button" class="btn-sponsor">지금 후원 시작하기</button>
+      </div>
+      <div class="sponsor-right">
+        <div class="sponsor-impact">
+          <div class="sponsor-impact-header">
+            <h4>월 1만원으로</h4>
+            <p>이만큼 도움을 줄 수 있어요</p>
+          </div>
+          <div class="sponsor-impact-list">
+            <div class="sponsor-impact-item">
+              <div class="impact-icon">🍖</div>
+              <div class="impact-text">
+                <strong>사료 30일분</strong>
+                <span>한 동물의 한 달 식사</span>
+              </div>
+            </div>
+            <div class="sponsor-impact-item">
+              <div class="impact-icon">💉</div>
+              <div class="impact-text">
+                <strong>기본 예방접종</strong>
+                <span>건강 관리 지원</span>
+              </div>
+            </div>
+            <div class="sponsor-impact-item">
+              <div class="impact-icon">🏥</div>
+              <div class="impact-text">
+                <strong>응급 치료</strong>
+                <span>위급 상황 대응</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sponsor-benefits-box">
+          <ul class="sponsor-benefits">
+            <li>✅ 언제든 변경/해지 가능</li>
+            <li>✅ 세액공제 최대 30%</li>
+            <li>✅ 투명한 사용 내역 공개</li>
+            <li>✅ 연간 활동 보고서 발송</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="help-bottom-grid animate-on-scroll">
+      <div class="help-bottom-card">
+        <div class="help-bottom-icon">👥</div>
+        <div class="help-bottom-text">
+          <h4>자원봉사</h4>
+          <p>매주 토, 일 오전, 동물들과 함께 시간을 보내며 봉사활동에 참여하세요.</p>
+          <a href="EV_Challenge_volunteer.html" class="help-link">자세히 보기 →</a>
+        </div>
+      </div>
+      <div class="help-bottom-card">
+        <div class="help-bottom-icon">🤍</div>
+        <div class="help-bottom-text">
+          <h4>후원하기</h4>
+          <p>당신의 작은 후원이 한 생명의 전부가 됩니다.</p>
+          <a href="EV_Challenge_foster.html" class="help-link">자세히 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 섹션 5: 문의하기 ===== -->
+  <section class="contact-section" id="contact">
+    <div class="section-header animate-on-scroll">
+      <h2>문의하기</h2>
+      <p>궁금한 점이 있으시면 언제든지 연락주세요</p>
+    </div>
+    <div class="contact-grid animate-on-scroll">
+      <div class="contact-card">
+        <div class="contact-icon icon-blue">📞</div>
+        <h3>전화 문의</h3>
+        <p class="contact-sub">평일 09:00 - 18:00</p>
+        <a href="tel:02-1234-5678" class="contact-link">02-1234-5678</a>
+      </div>
+      <div class="contact-card contact-card-active">
+        <div class="contact-icon icon-yellow">✉️</div>
+        <h3>이메일 문의</h3>
+        <p class="contact-sub">24시간 접수</p>
+        <a href="mailto:info@warm-meet.org" class="contact-link">info@warm-meet.org</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon icon-blue">📍</div>
+        <h3>방문 상담</h3>
+        <p class="contact-sub">사전 예약 필수</p>
+        <a href="#" class="contact-link">서울시 강남구</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 로그인 모달 ===== -->
+  <div class="login-modal-overlay" id="loginModal">
+    <div class="login-modal-container">
+      <div class="login-modal-left">
+        <div class="login-paws">
+          <span class="login-paw-big">🐾</span>
+          <span class="login-paw-small">🐾</span>
+        </div>
+        <h3>함께해요!</h3>
+        <p>유기동물과 사람을 이어주는<br>따뜻한 만남의 시작</p>
+      </div>
+      <div class="login-modal-right">
+        <button type="button" class="login-modal-close" id="loginModalClose">✕</button>
+        <h2>로그인</h2>
+        <p>계정에 로그인하세요</p>
+        <div class="login-form">
+          <div class="login-form-group">
+            <label for="loginEmail">이메일</label>
+            <input type="email" id="loginEmail" placeholder="example@email.com">
+          </div>
+          <div class="login-form-group">
+            <label for="loginPassword">비밀번호</label>
+            <input type="password" id="loginPassword" placeholder="••••••••">
+          </div>
+          <div class="login-form-options">
+            <label class="login-remember">
+              <input type="checkbox" id="loginRemember"> 로그인 유지
+            </label>
+            <a href="#" class="login-forgot">비밀번호 찾기</a>
+          </div>
+          <button type="button" class="btn-login-submit" id="loginSubmitBtn">로그인</button>
+        </div>
+        <p class="login-signup-text">계정이 없으신가요? <a href="#">회원가입</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ---- 스크롤 애니메이션 ---- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    /* ---- 통계 카운트업 애니메이션 ---- */
+    function countUp(el, target, suffix, prefix, duration) {
+      let start = 0;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        start = Math.min(start + step, target);
+        el.textContent = prefix + Math.round(start).toLocaleString() + suffix;
+        if (start >= target) clearInterval(timer);
+      }, 16);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          countUp(document.getElementById('statNum1'), 2, '만+', '', 1500);
+          countUp(document.getElementById('statNum2'), 98, '%', '', 1200);
+          countUp(document.getElementById('statNum3'), 500, '+', '', 1000);
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsEl = document.querySelector('.stats');
+    if (statsEl) statsObserver.observe(statsEl);
+
+    /* ---- 헤더 스크롤 효과 ---- */
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    /* ========== 로그인 모달 공통 로직 ========== */
+    initLoginModal();
+
+    function initLoginModal() {
+      const overlay  = document.getElementById('loginModal');
+      const closeBtn = document.getElementById('loginModalClose');
+      const loginBtn = document.getElementById('headerLoginBtn');
+      const submitBtn = document.getElementById('loginSubmitBtn');
+      const authArea = document.getElementById('headerAuthArea');
+
+      // sessionStorage에서 로그인 상태 복원
+      const savedUser = sessionStorage.getItem('loggedInUser');
+      if (savedUser) renderLoggedIn(savedUser);
+
+      if (loginBtn) {
+        loginBtn.addEventListener('click', openLoginModal);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeLoginModal);
+      }
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeLoginModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLoginModal();
+      });
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          const email = document.getElementById('loginEmail').value.trim();
+          const pw    = document.getElementById('loginPassword').value.trim();
+          if (!email || !pw) {
+            alert('이메일과 비밀번호를 입력해주세요.');
+            return;
+          }
+          // 간단한 프론트엔드 데모 로그인
+          const userName = email.split('@')[0];
+          sessionStorage.setItem('loggedInUser', userName);
+          renderLoggedIn(userName);
+          closeLoginModal();
+        });
+      }
+
+      function openLoginModal() {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          const emailInput = document.getElementById('loginEmail');
+          if (emailInput) emailInput.focus();
+        }, 100);
+      }
+
+      function closeLoginModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function renderLoggedIn(name) {
+        if (!authArea) return;
+        authArea.innerHTML = `
+          <div class="header-user-info">
+            <div class="header-user-avatar">${name.charAt(0).toUpperCase()}</div>
+            <span class="header-user-name">${name}님</span>
+            <button type="button" class="btn-header-logout" id="headerLogoutBtn">로그아웃</button>
+          </div>
+        `;
+        document.getElementById('headerLogoutBtn').addEventListener('click', function() {
+          sessionStorage.removeItem('loggedInUser');
+          authArea.innerHTML = `<button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>`;
+          document.getElementById('headerLoginBtn').addEventListener('click', openLoginModal);
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

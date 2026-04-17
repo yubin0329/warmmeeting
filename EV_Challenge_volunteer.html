@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자원봉사 - 따뜻한 만남</title>
+  <link rel="stylesheet" href="EV_Challenge_main.css">
+  <link rel="stylesheet" href="EV_Challenge_volunteer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="9" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="15" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="5" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <ellipse cx="19" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <path d="M12 10 C7 10 5 14 6 17 C7 20 9 21 12 21 C15 21 17 20 18 17 C19 14 17 10 12 10Z" fill="#1A1A2E"/>
+        </svg>
+      </div>
+      따뜻한 만남
+    </div>
+    <nav>
+      <a href="EV_Challenge_main.html">홈</a>
+      <a href="#">입양</a>
+      <a href="EV_Challenge_lost.html">실종/제보</a>
+      <a href="EV_Challenge_volunteer.html" class="active">자원봉사</a>
+    </nav>
+    <div id="headerAuthArea">
+      <button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>
+    </div>
+  </header>
+
+  <!-- ===== 히어로 배너 ===== -->
+  <section class="vol-hero">
+    <div class="vol-hero-left">
+      <h1>자원봉사자 모집</h1>
+      <p>당신의 시간이 생명을 구합니다</p>
+      <a href="#programs" class="btn-vol-apply">지금 신청하기 →</a>
+    </div>
+  </section>
+
+  <!-- ===== 지원 가능한 프로그램 ===== -->
+  <section class="vol-programs" id="programs">
+    <div class="vol-inner">
+      <div class="section-header">
+        <h2>지원 가능한 프로그램</h2>
+        <p>원하는 프로그램을 선택하여 신청하세요</p>
+      </div>
+      <div class="vol-cards-grid">
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">🐾</div>
+            <span class="vol-seats">5자리</span>
+          </div>
+          <h3>동물 돌봄</h3>
+          <p>산책, 목욕, 급식 등 일상적인 돌봄 활동</p>
+          <ul class="vol-info">
+            <li>🕐 주 1회 2시간</li>
+            <li>✅ 동물 사랑, 책임감</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">🏠</div>
+            <span class="vol-seats">8자리</span>
+          </div>
+          <h3>시설 관리</h3>
+          <p>청소, 정리, 환경 개선 등</p>
+          <ul class="vol-info">
+            <li>🕐 주 1회 3시간</li>
+            <li>✅ 체력, 성실성</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">📚</div>
+            <span class="vol-seats">3자리</span>
+          </div>
+          <h3>교육 도우미</h3>
+          <p>입양 교육, 캠페인 지원</p>
+          <ul class="vol-info">
+            <li>🕐 월 2회 4시간</li>
+            <li>✅ 커뮤니케이션 능력</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">📷</div>
+            <span class="vol-seats">2자리</span>
+          </div>
+          <h3>사진/영상</h3>
+          <p>입양 홍보 사진 및 영상 촬영</p>
+          <ul class="vol-info">
+            <li>🕐 자유</li>
+            <li>✅ 촬영 장비, 편집 능력</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">🎪</div>
+            <span class="vol-seats">6자리</span>
+          </div>
+          <h3>행사 지원</h3>
+          <p>입양 행사, 캠페인 준비 및 진행</p>
+          <ul class="vol-info">
+            <li>🕐 월 1회 5시간</li>
+            <li>✅ 대인관계, 기획력</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+        <div class="vol-card">
+          <div class="vol-card-top">
+            <div class="vol-card-icon">💊</div>
+            <span class="vol-seats">4자리</span>
+          </div>
+          <h3>의료 보조</h3>
+          <p>건강검진, 약물 투여 보조</p>
+          <ul class="vol-info">
+            <li>🕐 주 2회 3시간</li>
+            <li>✅ 세심함, 책임감</li>
+          </ul>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-vol-card" target="_blank">신청하기</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 봉사 일정 캘린더 ===== -->
+  <section class="vol-calendar">
+    <div class="vol-inner">
+      <div class="section-header">
+        <h2>봉사 일정</h2>
+        <p>날짜를 클릭하면 상세 일정을 확인할 수 있어요</p>
+      </div>
+      <div class="calendar-layout">
+        <div class="calendar-left">
+          <div class="cal-header">
+            <button type="button" class="cal-nav" id="calPrev">‹</button>
+            <h3 id="calTitle">2026년 4월</h3>
+            <button type="button" class="cal-nav" id="calNext">›</button>
+          </div>
+          <div class="cal-weekdays">
+            <span class="sunday">일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span class="saturday">토</span>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="cal-legend">
+            <div class="legend-item"><span class="legend-dot legend-animal"></span><span>동물 돌봄</span></div>
+            <div class="legend-item"><span class="legend-dot legend-facility"></span><span>시설 관리</span></div>
+            <div class="legend-item"><span class="legend-dot legend-event"></span><span>행사 지원</span></div>
+            <div class="legend-item"><span class="legend-dot legend-edu"></span><span>교육/기타</span></div>
+          </div>
+        </div>
+        <div class="calendar-right">
+          <div class="cal-right-header">
+            <h4 id="calDetailTitle">날짜를 선택하세요</h4>
+          </div>
+          <div class="cal-detail-list" id="calDetailList">
+            <p class="no-schedule-hint">← 왼쪽 캘린더에서 날짜를 클릭하면<br>해당 날의 봉사 일정이 표시됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 봉사활동 주의사항 ===== -->
+  <section class="vol-notice">
+    <div class="vol-inner">
+      <div class="section-header">
+        <h2>봉사활동 주의사항</h2>
+        <p>안전하고 즐거운 활동을 위해 꼭 읽어주세요</p>
+      </div>
+      <div class="vol-notice-grid">
+
+        <div class="vol-notice-card">
+          <div class="vol-notice-icon" style="background:#FFE4E6;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 19h20L12 2z" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"/>
+              <path d="M12 9v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="16.5" r="1" fill="white"/>
+            </svg>
+          </div>
+          <h3>필수 준수 사항</h3>
+          <ul class="vol-notice-list">
+            <li>✅ 활동 시작 전 오리엔테이션 필수 참석</li>
+            <li>✅ 활동 중 안전 수칙 준수 (장갑, 마스크 착용)</li>
+            <li>✅ 동물 알레르기 사전 확인 필수</li>
+            <li>✅ 약속한 시간 엄수 및 불참 시 사전 연락</li>
+          </ul>
+        </div>
+
+        <div class="vol-notice-card">
+          <div class="vol-notice-icon" style="background:#DBEAFE;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V6L12 2z" fill="#3B82F6" opacity="0.3" stroke="#3B82F6" stroke-width="1.5"/>
+              <path d="M9 12l2 2 4-4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>안전 수칙</h3>
+          <ul class="vol-notice-list">
+            <li>✅ 동물과의 접촉 후 반드시 손 씻기</li>
+            <li>✅ 예방접종 관장 (파상풍, 광견병)</li>
+            <li>✅ 응급상황 발생 시 즉시 담당자 연락</li>
+            <li>✅ 돌림 사고 발생 시 즉시 병원 방문</li>
+          </ul>
+        </div>
+
+        <div class="vol-notice-card">
+          <div class="vol-notice-icon" style="background:#FEF9C3;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="8" y="2" width="8" height="4" rx="1" fill="#F59E0B"/>
+              <rect x="5" y="4" width="14" height="18" rx="2" fill="#F59E0B" opacity="0.3" stroke="#F59E0B" stroke-width="1.5"/>
+              <path d="M9 12h6M9 15h4" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>참여 자격</h3>
+          <ul class="vol-notice-list">
+            <li>✅ 만 18세 이상 (미성년자는 보호자 동반)</li>
+            <li>✅ 주 1회 이상 정기적 참여 가능자</li>
+            <li>✅ 동물 사랑과 봉사 정신을 가진 분</li>
+            <li>✅ 건강 상태 양호 (전염병 없음)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 찾아오는 길 ===== -->
+  <section class="vol-location-section">
+    <div class="vol-inner">
+      <div class="vol-location-box">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <h2>찾아오는 방법</h2>
+          <p>함께하고 싶으신가요? 언제든 방문해주세요</p>
+        </div>
+        <div class="vol-location-inner">
+          <div class="vol-map-area" style="overflow:hidden; border-radius:16px;">
+            <img
+              src="사진/지도.jpg"
+              alt="찾아오는 길 지도"
+              style="width:100%; height:320px; object-fit:cover; transform:scale(1.5); transform-origin:center; display:block;">
+          </div>
+          <div class="vol-directions">
+            <div class="vol-direction-item">
+              <div class="direction-num">1</div>
+              <div class="direction-content">
+                <p class="direction-title">지하철로 오시는 경우</p>
+                <p class="direction-desc">2호선 강남역 3번 출구로 나와 직진 후 도보 5분</p>
+              </div>
+            </div>
+            <div class="vol-direction-item">
+              <div class="direction-num">2</div>
+              <div class="direction-content">
+                <p class="direction-title">버스로 오시는 경우</p>
+                <p class="direction-desc">146, 301, 401번 버스를 타고 강남역 정류장에서 하차</p>
+              </div>
+            </div>
+            <div class="vol-direction-item">
+              <div class="direction-num">3</div>
+              <div class="direction-content">
+                <p class="direction-title">자가용으로 오시는 경우</p>
+                <p class="direction-desc">건물 지하 주차장 이용 가능 (2시간 무료)</p>
+              </div>
+            </div>
+            <div class="vol-contact-details">
+              <p>📍 서울시 강남구 테헤란로 123</p>
+              <p>📞 02-1234-5678</p>
+              <p>🕐 평일 9시 - 18시 / 주말 10시 - 16시</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 로그인 모달 ===== -->
+  <div class="login-modal-overlay" id="loginModal">
+    <div class="login-modal-container">
+      <div class="login-modal-left">
+        <div class="login-paws">
+          <span class="login-paw-big">🐾</span>
+          <span class="login-paw-small">🐾</span>
+        </div>
+        <h3>함께해요!</h3>
+        <p>유기동물과 사람을 이어주는<br>따뜻한 만남의 시작</p>
+      </div>
+      <div class="login-modal-right">
+        <button type="button" class="login-modal-close" id="loginModalClose">✕</button>
+        <h2>로그인</h2>
+        <p>계정에 로그인하세요</p>
+        <div class="login-form">
+          <div class="login-form-group">
+            <label for="loginEmail">이메일</label>
+            <input type="email" id="loginEmail" placeholder="example@email.com">
+          </div>
+          <div class="login-form-group">
+            <label for="loginPassword">비밀번호</label>
+            <input type="password" id="loginPassword" placeholder="••••••••">
+          </div>
+          <div class="login-form-options">
+            <label class="login-remember">
+              <input type="checkbox" id="loginRemember"> 로그인 유지
+            </label>
+            <a href="#" class="login-forgot">비밀번호 찾기</a>
+          </div>
+          <button type="button" class="btn-login-submit" id="loginSubmitBtn">로그인</button>
+        </div>
+        <p class="login-signup-text">계정이 없으신가요? <a href="#">회원가입</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== 캘린더 =====
+    const schedules = {
+      '2026-04-04': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 3 }],
+      '2026-04-05': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 5 }],
+      '2026-04-11': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 2 }, { type: 'edu', label: '교육 도우미', time: '14:00 - 18:00', spots: 2 }],
+      '2026-04-12': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 4 }],
+      '2026-04-18': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 3 }, { type: 'event', label: '행사 지원', time: '13:00 - 18:00', spots: 6 }],
+      '2026-04-19': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 5 }],
+      '2026-04-25': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 3 }],
+      '2026-04-26': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 4 }, { type: 'edu', label: '교육 도우미', time: '14:00 - 18:00', spots: 1 }],
+      '2026-05-02': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 3 }],
+      '2026-05-03': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 5 }],
+      '2026-05-09': [{ type: 'animal',   label: '동물 돌봄', time: '10:00 - 12:00', spots: 2 }, { type: 'event', label: '행사 지원', time: '13:00 - 18:00', spots: 4 }],
+      '2026-05-10': [{ type: 'facility', label: '시설 관리', time: '09:00 - 12:00', spots: 4 }],
+    };
+
+    const typeColors = {
+      animal:   '#4DA6FF',
+      facility: '#52C41A',
+      edu:      '#FFD43B',
+      event:    '#A855F7',
+    };
+
+    let currentYear  = 2026;
+    let currentMonth = 3;
+
+    function renderCalendar(year, month) {
+      const grid     = document.getElementById('calGrid');
+      const title    = document.getElementById('calTitle');
+      const today    = new Date();
+      const firstDay = new Date(year, month, 1).getDay();
+      const lastDate = new Date(year, month + 1, 0).getDate();
+      const prevLast = new Date(year, month, 0).getDate();
+
+      title.textContent = `${year}년 ${month + 1}월`;
+      grid.innerHTML = '';
+
+      for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'cal-cell other-month';
+        cell.innerHTML = `<div class="cal-date">${prevLast - firstDay + 1 + i}</div>`;
+        grid.appendChild(cell);
+      }
+
+      for (let d = 1; d <= lastDate; d++) {
+        const cell      = document.createElement('div');
+        const dateStr   = `${year}-${String(month + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        const dayOfWeek = new Date(year, month, d).getDay();
+        const isToday   = (d === today.getDate() && month === today.getMonth() && year === today.getFullYear());
+        let cls = 'cal-cell';
+        if (dayOfWeek === 0) cls += ' sunday';
+        if (dayOfWeek === 6) cls += ' saturday';
+        if (isToday) cls += ' today';
+        cell.className = cls;
+
+        const dots = (schedules[dateStr] || []).map(s =>
+          `<div class="cal-dot" style="background:${typeColors[s.type]}"></div>`
+        ).join('');
+
+        cell.innerHTML = `<div class="cal-date">${d}</div><div class="cal-dots">${dots}</div>`;
+        cell.addEventListener('click', () => showDetail(dateStr, d, month, year));
+        grid.appendChild(cell);
+      }
+
+      const remaining = 42 - (firstDay + lastDate);
+      for (let i = 1; i <= remaining; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'cal-cell other-month';
+        cell.innerHTML = `<div class="cal-date">${i}</div>`;
+        grid.appendChild(cell);
+      }
+    }
+
+    function showDetail(dateStr, d, month, year) {
+      const title = document.getElementById('calDetailTitle');
+      const list  = document.getElementById('calDetailList');
+      title.textContent = `${year}년 ${month + 1}월 ${d}일 일정`;
+      const items = schedules[dateStr];
+      if (!items || items.length === 0) {
+        list.innerHTML = '<p class="no-schedule-hint">이 날은 봉사 일정이 없습니다 🐾</p>';
+        return;
+      }
+      list.innerHTML = items.map(s => `
+        <div class="cal-detail-item">
+          <div class="cal-detail-dot" style="background:${typeColors[s.type]}"></div>
+          <div class="cal-detail-info">
+            <p class="cal-detail-name">${s.label}</p>
+            <p class="cal-detail-time">🕐 ${s.time} · 잔여 ${s.spots}자리</p>
+          </div>
+          <a href="https://forms.cloud.microsoft/r/XbGdAVMVzq" class="btn-cal-apply" target="_blank">신청</a>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('calPrev').addEventListener('click', () => {
+      currentMonth--;
+      if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+      renderCalendar(currentYear, currentMonth);
+    });
+
+    document.getElementById('calNext').addEventListener('click', () => {
+      currentMonth++;
+      if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+      renderCalendar(currentYear, currentMonth);
+    });
+
+    renderCalendar(currentYear, currentMonth);
+
+    // ========== 로그인 모달 공통 로직 ==========
+    initLoginModal();
+
+    function initLoginModal() {
+      const overlay   = document.getElementById('loginModal');
+      const closeBtn  = document.getElementById('loginModalClose');
+      const loginBtn  = document.getElementById('headerLoginBtn');
+      const submitBtn = document.getElementById('loginSubmitBtn');
+      const authArea  = document.getElementById('headerAuthArea');
+
+      const savedUser = sessionStorage.getItem('loggedInUser');
+      if (savedUser) renderLoggedIn(savedUser);
+
+      if (loginBtn) loginBtn.addEventListener('click', openLoginModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeLoginModal);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeLoginModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLoginModal();
+      });
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          const email = document.getElementById('loginEmail').value.trim();
+          const pw    = document.getElementById('loginPassword').value.trim();
+          if (!email || !pw) { alert('이메일과 비밀번호를 입력해주세요.'); return; }
+          const userName = email.split('@')[0];
+          sessionStorage.setItem('loggedInUser', userName);
+          renderLoggedIn(userName);
+          closeLoginModal();
+        });
+      }
+
+      function openLoginModal() {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => { const el = document.getElementById('loginEmail'); if (el) el.focus(); }, 100);
+      }
+
+      function closeLoginModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function renderLoggedIn(name) {
+        if (!authArea) return;
+        authArea.innerHTML = `
+          <div class="header-user-info">
+            <div class="header-user-avatar">${name.charAt(0).toUpperCase()}</div>
+            <span class="header-user-name">${name}님</span>
+            <button type="button" class="btn-header-logout" id="headerLogoutBtn">로그아웃</button>
+          </div>`;
+        document.getElementById('headerLogoutBtn').addEventListener('click', function() {
+          sessionStorage.removeItem('loggedInUser');
+          authArea.innerHTML = `<button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>`;
+          document.getElementById('headerLoginBtn').addEventListener('click', openLoginModal);
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

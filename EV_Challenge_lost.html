@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실종/제보 - 따뜻한 만남</title>
+  <link rel="stylesheet" href="EV_Challenge_main.css">
+  <link rel="stylesheet" href="EV_Challenge_lost.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="9" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="15" cy="6" rx="2.5" ry="3" fill="#1A1A2E"/>
+          <ellipse cx="5" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <ellipse cx="19" cy="11" rx="2" ry="2.8" fill="#1A1A2E"/>
+          <path d="M12 10 C7 10 5 14 6 17 C7 20 9 21 12 21 C15 21 17 20 18 17 C19 14 17 10 12 10Z" fill="#1A1A2E"/>
+        </svg>
+      </div>
+      따뜻한 만남
+    </div>
+    <nav>
+      <a href="EV_Challenge_main.html">홈</a>
+      <a href="#">입양</a>
+      <a href="EV_Challenge_lost.html" class="active">실종/제보</a>
+      <a href="EV_Challenge_volunteer.html">자원봉사</a>
+    </nav>
+    <div id="headerAuthArea">
+      <button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>
+    </div>
+  </header>
+
+  <!-- ===== 히어로 배너 ===== -->
+  <section class="lost-hero">
+    <div class="lost-hero-inner">
+      <div class="lost-hero-live-badge">
+        <span class="live-dot"></span>
+        현재 8건의 실종 신고 진행중
+      </div>
+      <h1>실종 동물을 찾고 계신가요?</h1>
+      <p>
+        품종, 지역, 날짜로 빠르게 검색하고<br>
+        실시간으로 정보를 확인하세요
+      </p>
+      <div class="lost-hero-search-box">
+        <div class="hero-search-field">
+          <span class="hero-search-icon">🐕</span>
+          <select id="heroTypeSelect">
+            <option value="">품종 선택</option>
+            <option value="강아지">강아지</option>
+            <option value="고양이">고양이</option>
+          </select>
+        </div>
+        <div class="hero-search-divider"></div>
+        <div class="hero-search-field">
+          <span class="hero-search-icon">📍</span>
+          <input type="text" id="heroLocationInput" placeholder="지역을 입력하세요">
+        </div>
+        <div class="hero-search-divider"></div>
+        <div class="hero-search-field">
+          <span class="hero-search-icon">📅</span>
+          <input type="text" id="heroDateInput" placeholder="날짜 (예: 2024-01-01)">
+        </div>
+        <button type="button" class="btn-hero-search" id="heroSearchBtn">검색</button>
+      </div>
+      <div class="lost-hero-buttons">
+        <button type="button" class="btn-lost-primary">실종 신고하기</button>
+        <button type="button" class="btn-lost-secondary">발견 제보하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 실종 동물 목록 ===== -->
+  <section class="lost-list-section">
+    <div class="lost-list-inner">
+      <div class="lost-list-header">
+        <div>
+          <h2>실종 동물 목록</h2>
+          <p>현재 8마리의 동물이 가족을 기다리고 있습니다</p>
+        </div>
+        <div class="lost-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="지역, 종류로 검색" id="searchInput">
+        </div>
+      </div>
+      <div class="lost-filter-bar">
+        <div class="lost-filter-btns">
+          <button type="button" class="filter-btn active" data-filter="all">전체</button>
+          <button type="button" class="filter-btn" data-filter="강아지">🐶 강아지</button>
+          <button type="button" class="filter-btn" data-filter="고양이">🐱 고양이</button>
+        </div>
+        <div class="lost-sort-btns">
+          <button type="button" class="sort-btn active" data-sort="newest">최신순</button>
+          <button type="button" class="sort-btn" data-sort="oldest">오래된순</button>
+        </div>
+      </div>
+      <div class="lost-cards-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 실종 신고 배너 ===== -->
+  <section class="report-banner-section">
+    <div class="report-banner">
+      <h3>실종 동물을 신고하세요</h3>
+      <p>더 많은 사람들이 볼 수 있도록 실종 동물 정보를 등록해주세요</p>
+      <button type="button" class="btn-report-banner">실종 신고하기</button>
+    </div>
+  </section>
+
+  <!-- ===== 함께 만든 기적 ===== -->
+  <section class="miracle-section">
+    <div class="miracle-inner">
+      <h2>함께 만든 기적</h2>
+      <p>여러분의 제보와 관심 덕분에 많은 동물들이 가족을 다시 만났습니다</p>
+      <div class="miracle-stats">
+        <div class="miracle-stat"><span class="miracle-num">327</span><span class="miracle-label">성공적 재회</span></div>
+        <div class="miracle-stat"><span class="miracle-num">89%</span><span class="miracle-label">찾기 성공률</span></div>
+        <div class="miracle-stat"><span class="miracle-num">1,542</span><span class="miracle-label">누적 제보</span></div>
+        <div class="miracle-stat"><span class="miracle-num">24h</span><span class="miracle-label">평균 대응 시간</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 실종 동물 상세 모달 ===== -->
+  <div class="lost-modal-overlay" id="lostModal">
+    <div class="lost-modal-container">
+      <div class="lost-modal-header">
+        <div class="lost-modal-author">
+          <div class="lost-modal-avatar">🐾</div>
+          <div>
+            <p class="lost-modal-author-name">따뜻한 만남</p>
+            <p class="lost-modal-author-sub">사지말고 입양하세요.</p>
+          </div>
+        </div>
+        <div class="lost-modal-header-right">
+          <button type="button" class="lost-modal-close" id="lostModalClose">✕</button>
+        </div>
+      </div>
+      <div class="lost-modal-body">
+        <div class="lost-modal-left">
+          <div class="lost-modal-main-img">
+            <div class="lost-modal-img-placeholder">🖼</div>
+            <div class="lost-modal-img-counter">1 / 1</div>
+          </div>
+        </div>
+        <div class="lost-modal-right">
+          <div class="lost-modal-tags">
+            <span class="lost-modal-status-tag">실종</span>
+            <span class="lost-modal-type-tag" id="lostModalType">강아지</span>
+          </div>
+          <table class="lost-modal-table">
+            <tr><th>성별</th><td id="lostModalGender">-</td></tr>
+            <tr><th>나이</th><td id="lostModalAge">-</td></tr>
+            <tr><th>품종</th><td id="lostModalBreed">-</td></tr>
+            <tr><th>털색</th><td id="lostModalColor">-</td></tr>
+            <tr><th>특징</th><td id="lostModalFeature">-</td></tr>
+          </table>
+          <div class="lost-modal-divider"></div>
+          <table class="lost-modal-table">
+            <tr><th>실종일</th><td id="lostModalDate">-</td></tr>
+            <tr><th>실종 장소</th><td id="lostModalLocation">-</td></tr>
+            <tr><th>연락처</th><td id="lostModalPhone">-</td></tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 발견 제보 모달 ===== -->
+  <div class="report-modal-overlay" id="reportModal">
+    <div class="report-modal-container">
+      <div class="report-modal-header">
+        <div>
+          <h3>발견 제보</h3>
+          <p id="reportModalSubTitle">먼저 사진을 업로드하면 더 빠르게 매칭할 수 있어요</p>
+        </div>
+        <button type="button" class="report-modal-close" id="reportModalClose">✕</button>
+      </div>
+      <div class="report-modal-body">
+        <div class="report-upload-area" id="reportUploadArea">
+          <div class="report-upload-icon">📷</div>
+          <p class="report-upload-title">사진을 업로드하세요</p>
+          <p class="report-upload-sub">발견한 동물의 사진이 있으면 매칭이 더 쉬워집니다</p>
+          <button type="button" class="btn-upload">사진 선택하기</button>
+          <p class="report-upload-drag">또는 드래그 앤 드롭으로 업로드</p>
+          <input type="file" id="reportFileInput" accept="image/*" style="display:none;">
+        </div>
+        <div class="report-form">
+          <div class="report-form-row">
+            <div class="report-form-group">
+              <label>동물 종류</label>
+              <select id="reportType">
+                <option value="">선택하세요</option>
+                <option value="강아지">강아지</option>
+                <option value="고양이">고양이</option>
+                <option value="기타">기타</option>
+              </select>
+            </div>
+            <div class="report-form-group">
+              <label>발견 날짜</label>
+              <input type="text" id="reportDate" placeholder="연도-월-일">
+            </div>
+          </div>
+          <div class="report-form-group">
+            <label>발견 장소</label>
+            <input type="text" id="reportLocation" placeholder="예: 서울시 강남구 역삼동 강남역 근처">
+          </div>
+          <div class="report-form-group">
+            <label>간단한 설명</label>
+            <textarea id="reportDesc" placeholder="동물의 특징을 간단히 설명해주세요" rows="4"></textarea>
+          </div>
+          <div class="report-form-group">
+            <label>연락처</label>
+            <input type="text" id="reportPhone" placeholder="010-0000-0000">
+          </div>
+          <button type="button" class="btn-report-submit" id="reportSubmitBtn">제보 완료하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 실종 신고 모달 ===== -->
+  <div class="lost-report-modal-overlay" id="lostReportModal">
+    <div class="lost-report-modal-container">
+      <div class="lost-report-modal-header">
+        <div class="lost-report-header-left">
+          <div class="lost-report-header-icon">📢</div>
+          <div>
+            <h3>실종 신고하기</h3>
+            <p>정확한 정보 입력이 발견의 열쇠입니다</p>
+          </div>
+        </div>
+        <button type="button" class="lost-report-close" id="lostReportModalClose">✕</button>
+      </div>
+      <div class="lost-report-modal-body">
+        <div class="lost-report-left">
+          <div class="lost-report-section-title">동물 사진</div>
+          <div class="lost-report-upload-area" id="lostReportUploadArea">
+            <div class="lost-report-upload-icon">📷</div>
+            <p class="lost-report-upload-title">사진 업로드</p>
+            <p class="lost-report-upload-sub">최대 5장</p>
+            <input type="file" id="lostReportFileInput" accept="image/*" multiple style="display:none;">
+          </div>
+          <div class="lost-report-preview-grid" id="lostReportPreviewGrid"></div>
+          <div class="lost-report-section-title" style="margin-top:20px;">기본 정보</div>
+          <div class="lost-report-form">
+            <div class="lost-report-form-group">
+              <label>이름 <span class="req">*</span></label>
+              <input type="text" id="lrName" placeholder="동물 이름">
+            </div>
+            <div class="lost-report-form-row">
+              <div class="lost-report-form-group">
+                <label>종류</label>
+                <select id="lrType">
+                  <option value="">선택</option>
+                  <option value="강아지">강아지</option>
+                  <option value="고양이">고양이</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+              <div class="lost-report-form-group">
+                <label>품종</label>
+                <input type="text" id="lrBreed" placeholder="품종">
+              </div>
+            </div>
+            <div class="lost-report-form-row">
+              <div class="lost-report-form-group">
+                <label>나이</label>
+                <input type="text" id="lrAge" placeholder="예: 3살">
+              </div>
+              <div class="lost-report-form-group">
+                <label>성별</label>
+                <select id="lrGender">
+                  <option value="">선택</option>
+                  <option value="수컷">수컷</option>
+                  <option value="암컷">암컷</option>
+                  <option value="모름">모름</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lost-report-right">
+          <div class="lost-report-section-title">실종 정보</div>
+          <div class="lost-report-form">
+            <div class="lost-report-form-group">
+              <label>실종 장소 <span class="req">*</span></label>
+              <input type="text" id="lrLocation" placeholder="상세 주소">
+            </div>
+            <div class="lost-report-form-row">
+              <div class="lost-report-form-group">
+                <label>날짜 <span class="req">*</span></label>
+                <input type="text" id="lrDate" placeholder="연도-월-일">
+              </div>
+              <div class="lost-report-form-group">
+                <label>시각</label>
+                <input type="text" id="lrTime" placeholder="-- --:--">
+              </div>
+            </div>
+          </div>
+          <div class="lost-report-section-title" style="margin-top:16px;">외형 특징</div>
+          <div class="lost-report-form">
+            <div class="lost-report-form-group">
+              <label>색상</label>
+              <input type="text" id="lrColor" placeholder="예: 흰색, 갈색 반점">
+            </div>
+            <div class="lost-report-form-group">
+              <label>특이사항</label>
+              <textarea id="lrFeature" placeholder="특별한 특징을 자세히 설명해주세요" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="lost-report-section-title" style="margin-top:16px;">연락처</div>
+          <div class="lost-report-form">
+            <div class="lost-report-form-group">
+              <input type="text" id="lrPhone" placeholder="전화번호 *">
+            </div>
+            <div class="lost-report-form-group">
+              <input type="text" id="lrReward" placeholder="보상금 (선택)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lost-report-modal-footer">
+        <button type="button" class="btn-lost-report-cancel" id="lostReportCancelBtn">취소</button>
+        <button type="button" class="btn-lost-report-submit" id="lostReportSubmitBtn">신고하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 로그인 모달 ===== -->
+  <div class="login-modal-overlay" id="loginModal">
+    <div class="login-modal-container">
+      <div class="login-modal-left">
+        <div class="login-paws">
+          <span class="login-paw-big">🐾</span>
+          <span class="login-paw-small">🐾</span>
+        </div>
+        <h3>함께해요!</h3>
+        <p>유기동물과 사람을 이어주는<br>따뜻한 만남의 시작</p>
+      </div>
+      <div class="login-modal-right">
+        <button type="button" class="login-modal-close" id="loginModalClose">✕</button>
+        <h2>로그인</h2>
+        <p>계정에 로그인하세요</p>
+        <div class="login-form">
+          <div class="login-form-group">
+            <label for="loginEmail">이메일</label>
+            <input type="email" id="loginEmail" placeholder="example@email.com">
+          </div>
+          <div class="login-form-group">
+            <label for="loginPassword">비밀번호</label>
+            <input type="password" id="loginPassword" placeholder="••••••••">
+          </div>
+          <div class="login-form-options">
+            <label class="login-remember">
+              <input type="checkbox" id="loginRemember"> 로그인 유지
+            </label>
+            <a href="#" class="login-forgot">비밀번호 찾기</a>
+          </div>
+          <button type="button" class="btn-login-submit" id="loginSubmitBtn">로그인</button>
+        </div>
+        <p class="login-signup-text">계정이 없으신가요? <a href="#">회원가입</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== Power Automate URL =====
+    const FLOW_URL = 'https://default513294a03e2041b2a9706d30bf1546.fa.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/41d5785caf7c4f0fb999aa1f5041ce47/triggers/manual/paths/invoke?api-version=1';
+
+    // ===== 현재 제보 중인 동물 이름 =====
+    let currentReportAnimalName = '';
+
+    // ===== 관리자 설정 =====
+    const ADMIN_PASSWORD = '1234';
+    let isAdmin = false;
+
+    // ===== 기본 카드 데이터 =====
+    const defaultCardData = [
+      { name: '삼순이', type: '강아지', date: '2024-03-20', breed: '시츄',         location: '서울 강남구 역삼동',   feature: '빨간 목걸이를 하고 있어요',       phone: '010-1234-5678', gender: '암컷', age: '3살', color: '흰색/갈색', imgSrc: '사진/시츄_lost.jpg',        isDefault: true },
+      { name: '나비',   type: '고양이', date: '2024-03-22', breed: '코리안 숏헤어', location: '서울 송파구 잠실동',   feature: '왼쪽 귀에 흰 점이 있어요',        phone: '010-2345-6789', gender: '암컷', age: '2살', color: '회색/흰색', imgSrc: '사진/코숏_lost.jpg',        isDefault: true },
+      { name: '초코',   type: '강아지', date: '2024-03-23', breed: '포메라니안',    location: '서울 마포구 상암동',   feature: '분홍색 리본을 하고 있어요',       phone: '010-3456-7890', gender: '암컷', age: '1살', color: '갈색',      imgSrc: '사진/포메라니안_lost.jpg', isDefault: true },
+      { name: '구름이', type: '강아지', date: '2024-03-19', breed: '말티즈',        location: '서울 서초구 반포동',   feature: '흰색 털에 파란 목줄',             phone: '010-4567-8901', gender: '암컷', age: '2살', color: '흰색',      imgSrc: '사진/말티즈_lost.jpg',     isDefault: true },
+      { name: '별이',   type: '고양이', date: '2024-03-21', breed: '터키시 앙고라', location: '서울 용산구 이태원동', feature: '금색 방울이 달린 목걸이',         phone: '010-5678-9012', gender: '암컷', age: '3살', color: '흰색',      imgSrc: '사진/먼치킨_lost.jpg',     isDefault: true },
+      { name: '콩이',   type: '강아지', date: '2024-03-18', breed: '웰시코기',      location: '서울 관악구 신림동',   feature: '꼬리가 짧고 귀가 크고 뾰족해요', phone: '010-6789-0123', gender: '수컷', age: '2살', color: '주황/흰색', imgSrc: '사진/웰시코기_lost.jpg',   isDefault: true },
+      // ===== 추가 카드 =====
+      {
+        name: '이구',
+        type: '강아지',
+        date: '2026-04-15',
+        breed: '포메라니안',
+        location: '서울 강남구 역삼동',
+        feature: '베이지색 연한 갈색 털',
+        phone: '010-1234-3145',
+        gender: '미확인',
+        age: '13살',
+        color: '베이지색/연한 갈색',
+        imgSrc: '사진/이구.jpg',
+        isDefault: true
+      },
+      {
+        name: '쿠키',
+        type: '강아지',
+        date: '2026-04-06',
+        breed: '미확인',
+        location: '부산광역시 북구 화명대림타운 302동 지상주차장',
+        feature: '얼굴 가운데 털이 흰색입니다. 코에 큰 까만점이 있습니다. 오른팔에 까만점이 하나 있습니다. 귀옆털이 길고 풍성합니다. 꼬리털이 길고 풍성합니다.',
+        phone: '010-2433-2383',
+        gender: '수컷',
+        age: '1년 미만',
+        color: '검정색/흰색 섞임',
+        imgSrc: '사진/쿠키.jpg',
+        isDefault: true
+      },
+    ];
+
+    function loadUserCards() {
+      try { return JSON.parse(localStorage.getItem('lostCards') || '[]'); }
+      catch { return []; }
+    }
+
+    function saveUserCards(cards) {
+      localStorage.setItem('lostCards', JSON.stringify(cards));
+    }
+
+    // ===== 삭제된 기본 카드 제외하고 전체 카드 불러오기 =====
+    function loadAllCards() {
+      const deletedDefaults = JSON.parse(localStorage.getItem('deletedDefaults') || '[]');
+      const filteredDefaults = defaultCardData.filter((_, i) => !deletedDefaults.includes(i));
+      return [...filteredDefaults, ...loadUserCards()];
+    }
+
+    let cardData = loadAllCards();
+    let allCards = [];
+    let currentFilter = 'all';
+    let currentSort   = 'newest';
+    let currentSearch = '';
+    let currentDate   = '';
+    let uploadedFiles = [];
+
+    // ===== 카드 생성 함수 =====
+    function createCardElement(data, dataIndex) {
+      const card = document.createElement('div');
+      card.className = 'lost-card';
+      card.style.cursor = 'pointer';
+      card.style.position = 'relative';
+
+      const imgHTML = data.imgSrc
+        ? `<img src="${data.imgSrc}" alt="${data.name} 사진" style="width:100%;height:100%;object-fit:cover;">`
+        : `<div class="img-placeholder">🐾</div>`;
+
+      const deleteBtn = isAdmin
+        ? `<button type="button" class="admin-delete-btn" data-index="${dataIndex}">삭제</button>`
+        : '';
+
+      const featureText = data.feature || '특이사항 없음';
+      const featureId = `feature-${dataIndex}-${Date.now()}`;
+
+      card.innerHTML = `
+        ${deleteBtn}
+        <div class="lost-card-img">
+          <span class="tag-status status-lost">실종</span>
+          <span class="tag-type">${data.type}</span>
+          ${imgHTML}
+        </div>
+        <div class="lost-card-body">
+          <h3>${data.name}</h3>
+          <p class="breed">${data.breed || '품종 미상'}</p>
+          <ul class="lost-info">
+            <li>📍 ${data.location}</li>
+            <li>📅 실종일: ${data.date}</li>
+            <li class="feature-item">
+              <span class="feature-icon">ℹ️</span>
+              <span class="feature-text" id="${featureId}">${featureText}</span>
+              <button type="button" class="btn-feature-more" data-target="${featureId}" style="display:none;">더보기</button>
+            </li>
+          </ul>
+          <p class="lost-phone">📞 ${data.phone}</p>
+          <button type="button" class="btn-report">제보하기</button>
+        </div>
+      `;
+
+      // 더보기 버튼 처리: 텍스트가 1줄을 초과하면 버튼 표시
+      requestAnimationFrame(() => {
+        const featureSpan = card.querySelector(`#${featureId}`);
+        const moreBtn = card.querySelector('.btn-feature-more');
+        if (!featureSpan || !moreBtn) return;
+
+        // 1줄 높이 측정
+        const lineHeight = parseInt(getComputedStyle(featureSpan).lineHeight) || 18;
+        if (featureSpan.scrollHeight > lineHeight + 4) {
+          featureSpan.classList.add('feature-clamped');
+          moreBtn.style.display = 'inline';
+          moreBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (featureSpan.classList.contains('feature-clamped')) {
+              featureSpan.classList.remove('feature-clamped');
+              moreBtn.textContent = '접기';
+            } else {
+              featureSpan.classList.add('feature-clamped');
+              moreBtn.textContent = '더보기';
+            }
+          });
+        }
+      });
+
+      const deleteBtnEl = card.querySelector('.admin-delete-btn');
+      if (deleteBtnEl) {
+        deleteBtnEl.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!confirm(`"${data.name}" 카드를 삭제할까요?`)) return;
+
+          if (data.isDefault) {
+            const deletedDefaults = JSON.parse(localStorage.getItem('deletedDefaults') || '[]');
+            const originalIndex = defaultCardData.findIndex(d => d.name === data.name);
+            if (originalIndex !== -1 && !deletedDefaults.includes(originalIndex)) {
+              deletedDefaults.push(originalIndex);
+              localStorage.setItem('deletedDefaults', JSON.stringify(deletedDefaults));
+            }
+          } else {
+            const userCards = loadUserCards();
+            const userIndex = cardData.findIndex(d => d.name === data.name && !d.isDefault);
+            const userOnlyIndex = userIndex - (cardData.length - loadUserCards().length);
+            if (userOnlyIndex >= 0) {
+              userCards.splice(userOnlyIndex, 1);
+              saveUserCards(userCards);
+            }
+          }
+          cardData = loadAllCards();
+          renderAllCards();
+        });
+      }
+
+      card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('btn-report')) return;
+        if (e.target.classList.contains('admin-delete-btn')) return;
+        document.getElementById('lostModalType').textContent     = data.type;
+        document.getElementById('lostModalGender').textContent   = data.gender || '-';
+        document.getElementById('lostModalAge').textContent      = data.age || '-';
+        document.getElementById('lostModalBreed').textContent    = data.breed || '-';
+        document.getElementById('lostModalColor').textContent    = data.color || '-';
+        document.getElementById('lostModalFeature').textContent  = data.feature || '-';
+        document.getElementById('lostModalDate').textContent     = data.date;
+        document.getElementById('lostModalLocation').textContent = data.location;
+        document.getElementById('lostModalPhone').textContent    = data.phone;
+
+        const modalImg = document.querySelector('.lost-modal-main-img');
+        if (data.imgSrc) {
+          modalImg.innerHTML = `<img src="${data.imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">`;
+        } else {
+          modalImg.innerHTML = `<div class="lost-modal-img-placeholder">🖼</div><div class="lost-modal-img-counter">1 / 1</div>`;
+        }
+
+        document.getElementById('lostModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      card.querySelector('.btn-report').addEventListener('click', function(e) {
+        e.stopPropagation();
+        openReportModal(data.name);
+      });
+
+      return card;
+    }
+
+    // ===== 전체 카드 렌더링 =====
+    function renderAllCards() {
+      const grid = document.querySelector('.lost-cards-grid');
+      grid.innerHTML = '';
+      allCards = [];
+      cardData.forEach((data, index) => {
+        const card = createCardElement(data, index);
+        grid.appendChild(card);
+        allCards.push(card);
+      });
+      updateCount();
+    }
+
+    function updateCount() {
+      document.querySelector('.lost-list-header p').textContent =
+        `현재 ${allCards.length}마리의 동물이 가족을 기다리고 있습니다`;
+    }
+
+    // ===== 필터 + 정렬 + 검색 =====
+    function applyAll() {
+      const grid = document.querySelector('.lost-cards-grid');
+      let filtered = allCards.filter((card, i) => {
+        const matchType   = currentFilter === 'all' || cardData[i].type === currentFilter;
+        const location    = card.querySelector('.lost-info li:nth-child(1)')?.textContent.toLowerCase() || '';
+        const type        = card.querySelector('.tag-type')?.textContent.toLowerCase() || '';
+        const name        = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const breed       = card.querySelector('.breed')?.textContent.toLowerCase() || '';
+        const matchSearch = currentSearch === '' ||
+          location.includes(currentSearch) || type.includes(currentSearch) ||
+          name.includes(currentSearch)     || breed.includes(currentSearch);
+        const matchDate   = currentDate === '' || cardData[i].date >= currentDate;
+        return matchType && matchSearch && matchDate;
+      });
+      filtered.sort((a, b) => {
+        const ai = allCards.indexOf(a), bi = allCards.indexOf(b);
+        const da = new Date(cardData[ai].date), db = new Date(cardData[bi].date);
+        return currentSort === 'newest' ? db - da : da - db;
+      });
+      allCards.forEach(c => { c.style.display = 'none'; });
+      filtered.forEach(c => { c.style.display = 'block'; grid.appendChild(c); });
+      const noResult = document.querySelector('.no-result');
+      if (filtered.length === 0) {
+        if (!noResult) {
+          const msg = document.createElement('p');
+          msg.className = 'no-result';
+          msg.textContent = '검색 결과가 없습니다 🐾';
+          grid.after(msg);
+        }
+      } else { if (noResult) noResult.remove(); }
+    }
+
+    // ===== 초기 렌더링 =====
+    renderAllCards();
+
+    // ===== 관리자 단축키 Shift + Alt + A =====
+    document.addEventListener('keydown', function(e) {
+      if (e.shiftKey && e.altKey && e.key === 'A') {
+        if (isAdmin) {
+          isAdmin = false;
+          renderAllCards();
+          alert('관리자 로그아웃됐습니다.');
+        } else {
+          const pw = prompt('관리자 비밀번호를 입력하세요:');
+          if (pw === ADMIN_PASSWORD) {
+            isAdmin = true;
+            renderAllCards();
+            alert('관리자로 로그인됐습니다. 모든 카드에 삭제 버튼이 표시됩니다.');
+          } else if (pw !== null) {
+            alert('비밀번호가 틀렸습니다.');
+          }
+        }
+      }
+    });
+
+    // ===== 히어로 검색 =====
+    document.getElementById('heroSearchBtn').addEventListener('click', function() {
+      const type     = document.getElementById('heroTypeSelect').value;
+      const location = document.getElementById('heroLocationInput').value.trim().toLowerCase();
+      const date     = document.getElementById('heroDateInput').value.trim();
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (type) {
+        const matchBtn = document.querySelector(`.filter-btn[data-filter="${type}"]`);
+        if (matchBtn) matchBtn.classList.add('active');
+        currentFilter = type;
+      } else {
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        currentFilter = 'all';
+      }
+      currentSearch = location;
+      currentDate   = date;
+      document.getElementById('searchInput').value = location;
+      applyAll();
+      document.querySelector('.lost-list-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ===== 필터 버튼 =====
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        applyAll();
+      });
+    });
+
+    // ===== 정렬 버튼 =====
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSort = btn.dataset.sort;
+        applyAll();
+      });
+    });
+
+    // ===== 목록 검색창 =====
+    document.getElementById('searchInput').addEventListener('input', function() {
+      currentSearch = this.value.trim().toLowerCase();
+      applyAll();
+    });
+
+    // ===== 실종 상세 모달 닫기 =====
+    function closeLostModal() {
+      document.getElementById('lostModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lostModalClose').addEventListener('click', closeLostModal);
+    document.getElementById('lostModal').addEventListener('click', function(e) {
+      if (e.target === this) closeLostModal();
+    });
+
+    // ===== 발견 제보 모달 =====
+    function openReportModal(animalName) {
+      currentReportAnimalName = animalName || '';
+      const subTitle = document.getElementById('reportModalSubTitle');
+      if (animalName) {
+        subTitle.textContent = `"${animalName}"을(를) 발견하셨나요? 아래 정보를 입력해주세요`;
+      } else {
+        subTitle.textContent = '먼저 사진을 업로드하면 더 빠르게 매칭할 수 있어요';
+      }
+      document.getElementById('reportModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReportModal() {
+      document.getElementById('reportModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('reportModalClose').addEventListener('click', closeReportModal);
+    document.getElementById('reportModal').addEventListener('click', function(e) {
+      if (e.target === this) closeReportModal();
+    });
+
+    document.querySelector('.btn-lost-secondary').addEventListener('click', function() {
+      openReportModal('');
+    });
+
+    document.getElementById('reportUploadArea').addEventListener('click', function() {
+      document.getElementById('reportFileInput').click();
+    });
+
+    document.getElementById('reportFileInput').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        document.getElementById('reportUploadArea').classList.add('has-image');
+        document.querySelector('.report-upload-title').textContent = '사진이 선택됐어요 ✅';
+        document.querySelector('.report-upload-sub').textContent   = this.files[0].name;
+      }
+    });
+
+    // ===== 발견 제보 제출 → Power Automate 전송 =====
+    document.getElementById('reportSubmitBtn').addEventListener('click', async function() {
+      const animalType  = document.getElementById('reportType').value;
+      const date        = document.getElementById('reportDate').value.trim();
+      const location    = document.getElementById('reportLocation').value.trim();
+      const description = document.getElementById('reportDesc').value.trim();
+      const phone       = document.getElementById('reportPhone').value.trim();
+
+      if (!animalType || !date || !location || !phone) {
+        alert('동물 종류, 발견 날짜, 발견 장소, 연락처는 필수 입력 항목입니다.');
+        return;
+      }
+
+      const btn = document.getElementById('reportSubmitBtn');
+      btn.disabled = true;
+      btn.textContent = '전송 중...';
+
+      try {
+        const response = await fetch(FLOW_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            animalName:  currentReportAnimalName,
+            animalType:  animalType,
+            date:        date,
+            location:    location,
+            description: description,
+            phone:       phone
+          })
+        });
+
+        if (response.ok || response.status === 202) {
+          alert('제보가 완료됐습니다! 빠르게 확인 후 연락드리겠습니다 🐾');
+          document.getElementById('reportType').value     = '';
+          document.getElementById('reportDate').value     = '';
+          document.getElementById('reportLocation').value = '';
+          document.getElementById('reportDesc').value     = '';
+          document.getElementById('reportPhone').value    = '';
+          document.querySelector('.report-upload-title').textContent = '사진을 업로드하세요';
+          document.querySelector('.report-upload-sub').textContent   = '발견한 동물의 사진이 있으면 매칭이 더 쉬워집니다';
+          closeReportModal();
+        } else {
+          alert('전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+        }
+      } catch (err) {
+        alert('네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.');
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '제보 완료하기';
+      }
+    });
+
+    // ===== 실종 신고 모달 =====
+    function openLostReportModal() {
+      document.getElementById('lostReportModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLostReportModal() {
+      document.getElementById('lostReportModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lostReportModalClose').addEventListener('click', closeLostReportModal);
+    document.getElementById('lostReportCancelBtn').addEventListener('click', closeLostReportModal);
+    document.getElementById('lostReportModal').addEventListener('click', function(e) {
+      if (e.target === this) closeLostReportModal();
+    });
+
+    document.querySelector('.btn-lost-primary').addEventListener('click', openLostReportModal);
+    document.querySelector('.btn-report-banner').addEventListener('click', openLostReportModal);
+
+    // ===== 사진 업로드 + 미리보기 + 삭제 =====
+    document.getElementById('lostReportUploadArea').addEventListener('click', function() {
+      document.getElementById('lostReportFileInput').click();
+    });
+
+    document.getElementById('lostReportFileInput').addEventListener('change', function() {
+      const newFiles = Array.from(this.files);
+      newFiles.forEach(file => {
+        if (uploadedFiles.length >= 5) return;
+        uploadedFiles.push(file);
+      });
+      this.value = '';
+      renderPreviews();
+    });
+
+    function renderPreviews() {
+      const grid = document.getElementById('lostReportPreviewGrid');
+      grid.innerHTML = '';
+      uploadedFiles.forEach((file, idx) => {
+        const url  = URL.createObjectURL(file);
+        const item = document.createElement('div');
+        item.className = 'lost-report-preview-item';
+        item.innerHTML = `
+          <img src="${url}" alt="미리보기 ${idx+1}">
+          <button type="button" class="lost-report-preview-delete" data-idx="${idx}">✕</button>
+        `;
+        item.querySelector('.lost-report-preview-delete').addEventListener('click', function(e) {
+          e.stopPropagation();
+          uploadedFiles.splice(parseInt(this.dataset.idx), 1);
+          renderPreviews();
+        });
+        grid.appendChild(item);
+      });
+
+      if (uploadedFiles.length > 0) {
+        document.querySelector('.lost-report-upload-title').textContent = `사진 ${uploadedFiles.length}장 선택됨`;
+        document.querySelector('.lost-report-upload-sub').textContent   =
+          uploadedFiles.length < 5 ? `추가 가능 (${5 - uploadedFiles.length}장 남음)` : '최대 5장 완료';
+      } else {
+        document.querySelector('.lost-report-upload-title').textContent = '사진 업로드';
+        document.querySelector('.lost-report-upload-sub').textContent   = '최대 5장';
+      }
+    }
+
+    // ===== 실종 신고 제출 (localStorage 저장) =====
+    document.getElementById('lostReportSubmitBtn').addEventListener('click', function() {
+      const name     = document.getElementById('lrName').value.trim();
+      const location = document.getElementById('lrLocation').value.trim();
+      const date     = document.getElementById('lrDate').value.trim();
+      const phone    = document.getElementById('lrPhone').value.trim();
+      const type     = document.getElementById('lrType').value;
+      const breed    = document.getElementById('lrBreed').value.trim();
+      const age      = document.getElementById('lrAge').value.trim();
+      const feature  = document.getElementById('lrFeature').value.trim();
+      const gender   = document.getElementById('lrGender').value;
+      const color    = document.getElementById('lrColor').value.trim();
+
+      if (!name || !location || !date || !phone) {
+        alert('이름, 실종 장소, 날짜, 전화번호는 필수 입력 항목입니다.');
+        return;
+      }
+
+      function buildAndSave(imgSrc) {
+        const newData = {
+          name, type: type || '기타', date, breed, location,
+          feature, phone, gender, age, color,
+          imgSrc: imgSrc || '',
+          isDefault: false
+        };
+
+        const saved = loadUserCards();
+        saved.push(newData);
+        saveUserCards(saved);
+
+        cardData = loadAllCards();
+        renderAllCards();
+
+        ['lrName','lrBreed','lrAge','lrLocation','lrDate','lrTime','lrColor','lrFeature','lrPhone','lrReward'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+        document.getElementById('lrType').value   = '';
+        document.getElementById('lrGender').value = '';
+        uploadedFiles = [];
+        renderPreviews();
+
+        closeLostReportModal();
+        document.querySelector('.lost-list-section').scrollIntoView({ behavior: 'smooth' });
+        alert(`${name} 실종 신고가 완료됐습니다 🐾`);
+      }
+
+      if (uploadedFiles.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function(e) { buildAndSave(e.target.result); };
+        reader.readAsDataURL(uploadedFiles[0]);
+      } else {
+        buildAndSave('');
+      }
+    });
+
+    // ========== 로그인 모달 공통 로직 ==========
+    initLoginModal();
+
+    function initLoginModal() {
+      const overlay   = document.getElementById('loginModal');
+      const closeBtn  = document.getElementById('loginModalClose');
+      const loginBtn  = document.getElementById('headerLoginBtn');
+      const submitBtn = document.getElementById('loginSubmitBtn');
+      const authArea  = document.getElementById('headerAuthArea');
+
+      const savedUser = sessionStorage.getItem('loggedInUser');
+      if (savedUser) renderLoggedIn(savedUser);
+
+      if (loginBtn) loginBtn.addEventListener('click', openLoginModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeLoginModal);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeLoginModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLoginModal();
+      });
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          const email = document.getElementById('loginEmail').value.trim();
+          const pw    = document.getElementById('loginPassword').value.trim();
+          if (!email || !pw) { alert('이메일과 비밀번호를 입력해주세요.'); return; }
+          const userName = email.split('@')[0];
+          sessionStorage.setItem('loggedInUser', userName);
+          renderLoggedIn(userName);
+          closeLoginModal();
+        });
+      }
+
+      function openLoginModal() {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => { const el = document.getElementById('loginEmail'); if (el) el.focus(); }, 100);
+      }
+
+      function closeLoginModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function renderLoggedIn(name) {
+        if (!authArea) return;
+        authArea.innerHTML = `
+          <div class="header-user-info">
+            <div class="header-user-avatar">${name.charAt(0).toUpperCase()}</div>
+            <span class="header-user-name">${name}님</span>
+            <button type="button" class="btn-header-logout" id="headerLogoutBtn">로그아웃</button>
+          </div>`;
+        document.getElementById('headerLogoutBtn').addEventListener('click', function() {
+          sessionStorage.removeItem('loggedInUser');
+          authArea.innerHTML = `<button type="button" class="btn-header-login" id="headerLoginBtn">로그인</button>`;
+          document.getElementById('headerLoginBtn').addEventListener('click', openLoginModal);
+        });
+      }
+    }
+
+  </script>
+
+</body>
+</html>
